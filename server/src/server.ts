@@ -1,13 +1,12 @@
 import express from 'express';
 import cors from 'cors'; 
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
-const router = express.Router()
-
-router.get('/', function (req, res) {
-  res.send("All systems operational")
-})
-
 app.use(cors());
-app.use(router);
-app.listen(3000, () => console.log('Listening on port 3000'));
+
+
+
+
+app.listen(process.env.PORT||3000, () => console.log('Listening on port 3000'))
